@@ -59,13 +59,15 @@ import javax.microedition.khronos.opengles.GL10;
  * A very simple Renderer that adds a marker and draws a cube on it.
  */
 public class SimpleRenderer extends ARRenderer {
-
     private int markerID = -1;
-    private Cube cube = new Cube(40.0f, 0.0f, 0.0f, 20.0f);
-
+   // private PracticeCube cube = new PracticeCube(40.0f, 0.0f, 0.0f, 20.0f);
+   private PracticeCube cube;
     /**
      * Markers can be configured here.
      */
+    public SimpleRenderer(PracticeCube cube){
+        this.cube= cube;
+    }
     @Override
     public boolean configureARScene() {
 
@@ -96,6 +98,7 @@ public class SimpleRenderer extends ARRenderer {
         if (ARToolKit.getInstance().queryMarkerVisible(markerID)) {
             gl.glMatrixMode(GL10.GL_MODELVIEW);
             gl.glLoadMatrixf(ARToolKit.getInstance().queryMarkerTransformation(markerID), 0);
+            //cube.draw(gl,(float) (3.14/4)*180,1f,1f,1f);
             cube.draw(gl);
         }
 

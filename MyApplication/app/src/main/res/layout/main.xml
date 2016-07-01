@@ -9,6 +9,16 @@
         android:id="@+id/mainLayout"
         android:layout_width="640px"
         android:layout_height="480px"
-        android:orientation="vertical" />
-
+        android:orientation="vertical"
+        />
+    <Button
+        android:id="@+id/romate"
+        android:text="add romate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/level"
+        android:text="degree level:1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </LinearLayout>
